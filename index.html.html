@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Salário Líquido</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Calculadora de Salário Líquido</h1>
+
+    <form class="form-container" name="formulario-salario">
+      <label for="salario-bruto">Salário Bruto (R$):</label>
+      <input type="text" name="salario-bruto" id="salario-bruto" value="4000" placeholder="Informe o salário bruto">
+      <br>
+      <label for="dependentes">Número de Dependentes:</label>
+      <input type="number" name="dependentes" id="dependentes" value="0" min="0" placeholder="Informe o número de dependentes">
+      <br>
+      <button type="button" onclick="calcSl()">Calcular Salário Líquido</button>
+    </form>
+
+
+    <div class="resultado-container">
+      <p>INSS:</p>
+      <p id="inss"></p>
+    </div>
+
+    <div class="resultado-container">
+      <p>Alíquota do IRRF:</p>
+      <p id="aliquota-irrf"></p>
+    </div>
+
+    <div class="resultado-container">
+      <p>IRRF:</p>
+      <p id="irrf"></p>
+    </div>
+
+    <div class="resultado-container" style=" border-bottom: 1px solid #ccc;">
+      <p style="font-size: 20px;">Salário Líquido:</p>
+      <p id="salario-liquido"></p>
+    </div>
+    <p>Obs.: O cálculo não inclui casos especiais ou outras deduções.</p>
+
+    
+    <table class="tabela-inss">
+      <caption>Tabela INSS 2023</caption>
+      <thead>
+        <tr>
+          <th>Faixa</th>
+          <th>Salário de contribuição</th>
+          <th>Alíquota</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1<sup>a</sup></td>
+          <td>Até R$ 1.320</td>
+          <td>7,5%</td>
+        </tr>
+        <tr>
+          <td>2<sup>a</sup></td>
+          <td>De R$ 1.320,01 a R$ 2.571,29</td>
+          <td>9%</td>
+        </tr>
+        <tr>
+          <td>3<sup>a</sup></td>
+          <td>De R$ 2.571,30 até R$ 3.856,94</td>
+          <td>12%</td>
+        </tr>
+        <tr>
+          <td>4<sup>a</sup></td>
+          <td>De R$ 3.856,95 até R$ 7.507,49</td>
+          <td>14%</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="tabela-irrf">
+      <caption>Tabela Imposto de Renda 2023</caption>
+      <thead>
+        <tr>
+          <th>Base de cálculo</th>
+          <th>Alíquota</th>
+          <th>Dedução</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Até R$ 2112,00</td>
+          <td>Isento</td>
+          <td>R$ 0</td>
+        </tr>
+        <tr>
+          <td>De R$ 2112,01 a R$ 2.826,65</td>
+          <td>7,5%</td>
+          <td>R$ 158,40</td>
+        </tr>
+        <tr>
+          <td>De R$ 2.826,66 a R$ 3.751,05</td>
+          <td>15%</td>
+          <td>R$ 370,40</td>
+        </tr>
+        <tr>
+          <td>De R$ 3.751,06 a R$ 4.664,68</td>
+          <td>22,5%</td>
+          <td>R$ 651,73</td>
+        </tr>
+        <tr>
+          <td>Acima de R$ 4.664,68</td>
+          <td>27,5%</td>
+          <td>R$ 884,96</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+  
+  <script src=calculadora.js></script>
+</body>
+</html>
